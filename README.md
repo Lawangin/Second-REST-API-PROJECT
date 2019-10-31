@@ -1,2 +1,3 @@
-# Second-REST-API-PROJECT
-Made with nodeJS and express framework
+# Blog front end for graphql api backend
+
+Made with Reactjs, nodeJS with express framework
