@@ -182,7 +182,7 @@ class Feed extends Component {
         userStatus: this.state.status
       }
     };
-    fetch('http://localhost:8080/graphql', {
+    fetch('https://blog-graphqlapi.herokuapp.com/graphql', {
       method: 'POST',
       headers: {
         Authorization: 'Bearer ' + this.props.token,
@@ -241,6 +241,7 @@ class Feed extends Component {
       body: formData
     })
         .then(res => res.json())
+        .then()
         .then(fileResData => {
           const imageUrl = fileResData.filePath || 'undefined';
           let graphqlQuery = {
@@ -299,6 +300,7 @@ class Feed extends Component {
             }
           });
         })
+
     // let url = 'http://localhost:8080/feed/post';
     // let method = 'POST';
     // if (this.state.editPost) {
@@ -331,6 +333,9 @@ class Feed extends Component {
             createdAt: resData.data[resDataField].createdAt,
             imagePath: resData.data[resDataField].imageUrl
           };
+          if(post.imagePath === "undefined") {
+            throw new Error('Please enter a jpeg or png file');
+          }
           this.setState(prevState => {
             let updatedPosts = [...prevState.posts];
             let updatedTotalPosts = prevState.totalPosts;
@@ -355,6 +360,9 @@ class Feed extends Component {
             };
           });
         })
+        // .then(res => {
+        //   console.log(this.state.posts);
+        // })
         .catch(err => {
           console.log(err);
           this.setState({

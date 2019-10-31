@@ -136,6 +136,7 @@ class App extends Component {
         password: authData.signupForm.password.value
       }
     };
+    // https://blog-graphqlapi.herokuapp.com/
     fetch('https://blog-graphqlapi.herokuapp.com/graphql', {
       method: 'POST',
       headers: {
