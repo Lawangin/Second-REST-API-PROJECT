@@ -38,3 +38,11 @@
     left: calc((100% - 40rem) / 2);
   }
 }
+
+@media (max-width: 700px) {
+  .modal {
+    overflow-y: scroll;
+    overflow-x: hidde;
+    top: 5vh;
+  }
+}
