@@ -9,13 +9,13 @@ class Login extends Component {
   state = {
     loginForm: {
       email: {
-        value: '',
+        value: 'test@test.com',
         valid: false,
         touched: false,
         validators: [required, email]
       },
       password: {
-        value: '',
+        value: '123456',
         valid: false,
         touched: false,
         validators: [required, length({ min: 5 })]
@@ -74,6 +74,7 @@ class Login extends Component {
             })
           }
         >
+          <p>May login with current values user: <strong>test@test.com</strong> pass: <strong>123456</strong> for testing</p>
           <Input
             id="email"
             label="Your E-Mail"
