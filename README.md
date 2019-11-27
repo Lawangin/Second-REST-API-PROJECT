@@ -2,7 +2,8 @@
 
 Made with Reactjs, nodeJS with express framework
 
-Demo:
+### Demo:
+
 ![blog-app-demo](./public/Nov-26-2019%20blogging-app.gif)
 
 After cloning repo, must run the following in terminal  
